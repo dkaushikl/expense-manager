@@ -6,6 +6,11 @@ import { AddTodo, DeleteTodo } from './src/actions/todos';
 import TodoAction from './src/components/Todo/TodoAction';
 import TodoList from './src/components/Todo/TodoList';
 import ToDoDetail from './src/components/Todo/TodoDetail';
+import Register from './src/components/Auth/Register';
+// import ScrollDemo from './src/components/Scroll/ScrollDemo';
+// import HorizontalScroll from './src/components/Scroll/HorizontalScroll';
+import ViewPagerExample from './src/components/Scroll/ViewPagerExample';
+import BasicList from './src/components/List/BasicList';
 
 const App = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -31,16 +36,18 @@ const App = (props) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.containerInner}>
-        <TodoAction addToDo={(name) => this.addToDo(name)} />
+      <BasicList />
+      {/* <ViewPagerExample /> */}
+      {/* <HorizontalScroll /> */}
+      {/* <Register /> */}
+      {/* <TodoAction addToDo={(name) => this.addToDo(name)} />
         <View>
           {props.todoList && props.todoList.length > 0 ?
             <TodoList todoList={props.todoList} deleteTodo={(e) => this.deleteTodo(e)} detailTodo={(e) => this.detailTodo(e)} />
             : null
           }
         </View>
-        <ToDoDetail modalVisible={modalVisible} name={name} setModalVisible={(e) => setModalVisible(e)} />
-      </View>
+        <ToDoDetail modalVisible={modalVisible} name={name} setModalVisible={(e) => setModalVisible(e)} /> */}
     </View>
   );
 };
@@ -49,10 +56,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  containerInner: {
-    flex: 50,
-    backgroundColor: 'teal',
-  }
 });
 
 const mapStateToProps = state => ({
